@@ -19,5 +19,9 @@ Route::get('/jobdetail/{id}','HomeController@jobdetail')->name('jobdetail');
 // Admin route
 Route::get('/admin','AdminController@admin')->name('admin.dashboard');
 Route::get('/admin/add','AdminController@AddJob')->name('AddJob');
+Route::get('/admin/show','AdminController@Show')->name('Show');
+Route::get('/edit/{id}','AdminController@Edit')->name('Edit');
+
 
 Route::post('/admin/add/post','AdminController@Postjob')->name('job.save');
+Route::post('/update','AdminController@Update')->name('job.update');

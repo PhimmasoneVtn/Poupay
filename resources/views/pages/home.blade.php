@@ -75,9 +75,9 @@
                     <div class="brows-job-company-img"><img src="{{url('/')}}/upload/{{$job->logo}}" class="img-responsive"
                                                                 alt=""/></div>
                         <div class="brows-job-position">
-                        <h3><a href="{{route('jobdetail',$job->id)}}}">{{$job->title}}</a></h3>
+                        <h3><a href="{{route('jobdetail',$job->id)}}">{{$job->title}}</a></h3>
 
-                        <p><span>{{$job->company_name}}}</span></p>
+                        <p><span>{{$job->company_name}}</span></p>
                         </div>
                         <div class="job-position"><span class="job-num">5 Position</span></div>
                         <div class="brows-job-type"><span class="enternship">Enternship</span></div>

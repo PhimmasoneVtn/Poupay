@@ -13,6 +13,23 @@ class AdminController extends Controller
     public function AddJob(){
         return view('admin.job.add');
     }
+    public function Show(){
+        $jobs = PostJob::all();
+        return view('admin.job.show',compact('jobs'));
+    }
+    public function Edit(Request $request){
+        $jobs = PostJob::find($request->id);
+        return view('admin.job.edit',compact('jobs'));
+    }
+    public function Update(Request $request){
+            PostJob::where('id',$request->id)->update([
+           'title' => $request->title,
+           'company_name' => $request->company_name,
+           'location' => $request->location,
+           'description' => $request->description
+        ]); 
+        return redirect('admin/show');
+    }
     public function Postjob(Request $request){
         $this->validate($request, [
             'title'=>'required',
